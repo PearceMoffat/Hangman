@@ -1,0 +1,65 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: #D19C3A;
+	font-family: 'Just Another Hand', cursive;
+	font-size: 24px;
+}
+
+h1 {
+	font-size: 72px;
+}
+
+header {
+	text-align: center;
+}
+
+.col-md-3 {
+	border: 3px brown dashed;
+	text-align: center;
+	height: 430px;
+}
+
+#buffer {
+	border: none;
+}
+
+#bullets {
+	min-height: 34px;
+}
+
+#hangman-image {
+	width: 100%;
+	height: 100%;
+}
+
+#letters-guessed {
+	letter-spacing: 2px;
+}
+
+#shot1, #shot2, #shot3, #shot4,
+#shot5, #shot6, #shot7, #shot8,
+#shot9, #shot10, #shot11, #shot12 {
+	position: absolute;
+	display: none;
+}
+
+#shot2, #shot8 {
+	top: 15%;
+}
+
+#shot3, #shot9 {
+	top: 30%;
+}
+
+#shot4, #shot10 {
+	top: 45%;
+}
+
+#shot5, #shot11 {
+	top: 60%;
+}
+
+#shot6, #shot12 {
+	top: 75%;
+}

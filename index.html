@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Just+Another+Hand" rel="stylesheet">
+	
+	<title>Hangman</title>
+</head>
+<body>
+	<header>
+		<h1>Wild West Hangman</h1>
+	</header>
+	
+	<div id="buffer" class="col-md-3">
+		<img id="shot1" src=assets/images/bullethole.png>
+		<img id="shot2" src=assets/images/bullethole.png>
+		<img id="shot3" src=assets/images/bullethole.png>
+		<img id="shot4" src=assets/images/bullethole.png>
+		<img id="shot5" src=assets/images/bullethole.png>
+		<img id="shot6" src=assets/images/bullethole.png>
+	</div>
+	<div class="col-xs-6 col-sm-6 col-md-3">
+		<img id="hangman-image" src="assets/images/wrong0.png">
+	</div>
+	<div class="col-xs-6 col-sm-6 col-md-3">
+		<br>
+		<p>Guess a letter to start, partner.<p>
+		<p>Wins: <span id="win-count">0</span></p>
+		<p>Losses: <span id="loss-count">0</span></p>
+		<p><u>Current Word</u></p>
+		<p><span id="current-word"></span></p>
+		<p>Number of Guesses Remaining</p>
+		<p id="bullets">
+			<img id="bullet1" src="assets/images/bullet.jpg">
+			<img id="bullet2" src="assets/images/bullet.jpg">
+			<img id="bullet3" src="assets/images/bullet.jpg">
+			<img id="bullet4" src="assets/images/bullet.jpg">
+			<img id="bullet5" src="assets/images/bullet.jpg">
+			<img id="bullet6" src="assets/images/bullet.jpg">
+			<img id="bullet7" src="assets/images/bullet.jpg">
+			<img id="bullet8" src="assets/images/bullet.jpg">
+			<img id="bullet9" src="assets/images/bullet.jpg">
+			<img id="bullet10" src="assets/images/bullet.jpg">
+			<img id="bullet11" src="assets/images/bullet.jpg">
+			<img id="bullet12" src="assets/images/bullet.jpg">
+		</p>
+		<p>Letters already guessed</p>
+		<p><span id="letters-guessed"></span></p>
+	</div>
+	<div id="buffer" class="col-md-3">
+		<img id="shot7" src=assets/images/bullethole.png>
+		<img id="shot8" src=assets/images/bullethole.png>
+		<img id="shot9" src=assets/images/bullethole.png>
+		<img id="shot10" src=assets/images/bullethole.png>
+		<img id="shot11" src=assets/images/bullethole.png>
+		<img id="shot12" src=assets/images/bullethole.png>
+	</div>
+
+	<h2 class="text-center">Last word: <span id="last-word"></span></h2>
+
+	<script type="text/javascript" src="assets/javascript/game.js"></script>
+</body>
+</html>
