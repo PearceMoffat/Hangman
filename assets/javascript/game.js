@@ -47,6 +47,7 @@ var guessed = [];
 var lettersGuessed = document.getElementById("letters-guessed");
 var image = document.getElementById("hangman-image");
 
+// All audio files for the game
 var audiowin = new Audio('assets/images/NiceOne.mp3');
 var audioloss = new Audio('assets/images/Happens.mp3');
 var audioone = new Audio('assets/images/losing.mp3');
@@ -55,6 +56,7 @@ var audioeasy = new Audio('assets/images/Easy.ogg');
 var audiogun = new Audio('assets/images/gunshot.wav');
 var audioding = new Audio('assets/images/ding.wav');
 
+// Replace the letters with underscores
 for (var i = 0; i < answer.length; i++) {
     hiddenAnswer.push("_");
 }
@@ -62,7 +64,7 @@ for (var i = 0; i < answer.length; i++) {
 audiostart.play();
 currentWord.textContent = hiddenAnswer.join(" ");
 
-//Hide all bulletholes and show all bullets (called when game restarts)
+// Hide all bulletholes and show all bullets (called when game restarts)
 function clearBullets() {
     bullets = [];
     for (var i = 1; i < 13; i++) {
@@ -73,7 +75,7 @@ function clearBullets() {
     }
 }
 
-//Fill hiddenAnswer with underscores instead of letters
+// Fill hiddenAnswer with underscores instead of letters
 function initializeWord(x) {
     hiddenAnswer = [];
     for (var i = 0; i < x.length; i++) {
@@ -81,7 +83,7 @@ function initializeWord(x) {
     }
 }
 
-//Erase one bullet when a wrong letter is guessed
+// Erase one bullet when a wrong letter is guessed
 function removeBullet(x) {
     switch (x) {
         case 12:
@@ -135,7 +137,7 @@ function removeBullet(x) {
     }
 }
 
-//Reset the gameboard when a player wins or loses
+// Reset the gameboard when a player wins or loses
 function resetGame() {
     clearBullets();
     lastWord.textContent = answer;
@@ -151,7 +153,7 @@ function resetGame() {
     image.src = "assets/images/wrong0.png";
 }
 
-//Show a bullet hole and play sound. Called when incorrect letter is guessed
+// Show a bullet hole and play sound. Called when incorrect letter is guessed
 function shoot() {
     if (guesses != 0) {
     	audiogun.play();
@@ -243,7 +245,7 @@ function shoot() {
     bullets.push(bulletNum);
 }
 
-//Changes image as wrong letters are guessed
+// Changes image as wrong letters are guessed
 function updateImage(x) {
     switch (x) {
         case 0:
@@ -288,20 +290,21 @@ function updateImage(x) {
     }
 }
 
+// Run when a key is released
 document.onkeyup = function(event) {
     var letter = event.key;
     var charCode = letter.charCodeAt(0);
 
-    //Check if the guess is a letter
+    // Check if the guess is a letter
     if (charCode >= 97 && charCode <= 122) {
 
-        //Game is over, player has lost
+        // Game is over, player has lost
         if (guesses === 0) {
             losses++;
             resetGame();
         }
 
-        //Word does not contain letter
+        // Word does not contain letter
         else if (answer.indexOf(letter) < 0 && guessed.indexOf(letter) < 0) {
             guessed.push(letter);
             removeBullet(guesses);
@@ -314,7 +317,7 @@ document.onkeyup = function(event) {
             shoot();
         }
 
-        //Word does contain letter
+        // Word does contain letter
         else if (guessed.indexOf(letter) < 0) {
             guessed.push(letter);
             audioding.play();
@@ -325,12 +328,12 @@ document.onkeyup = function(event) {
             }
         }
 
-        //Update all content
+        // Update all content
         lettersGuessed.textContent = guessed.join(" ");
         currentWord.textContent = hiddenAnswer.join(" ");
         updateImage(guesses);
 
-        //Game is over, player has won
+        // Game is over, player has won
         if (hiddenAnswer.indexOf("_") < 0) {
             wins++;
             if (guesses === 12) {

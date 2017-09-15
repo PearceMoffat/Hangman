@@ -1,1 +1,1 @@
-# Hangman
+Remake of the classic Hangman game. Press any letter on the keyboard to guess the letter. The letter will be added to letters guessed, if the letter is in the word, it will be shown. If not, a bullet will be taken away from remaining guesses, the image will update, and a bullet hole will be displayed randomly outside the screen. When all guesses are used up or the word is completed, update win/loss count and automatically refresh with a new word.
